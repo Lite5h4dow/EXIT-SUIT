@@ -3,8 +3,8 @@ using System.Numerics;
 namespace ExitSuit{
   class Joint{
     public Quaternion rotation {get; set;}
-    public Vector3 position {get; set;}
-    public Joint? parent {get; set;}
+    public Vector3 position {get; private set;}
+    public Joint? parent {get; private set;}
     public List<Joint> children {get; set;}
     public Skeleton skeleton {get; set;}
     public JointCalibration calibration {get; set;}
@@ -33,7 +33,8 @@ namespace ExitSuit{
   }
 
   class JointCalibration{
-    public Quaternion rotation {get; set;}
+    public Quaternion rotationOffset {get; set;}
+    public Vector3 positionOffset {get; set;}
   }
 
   class JointFeedbackImpulse{

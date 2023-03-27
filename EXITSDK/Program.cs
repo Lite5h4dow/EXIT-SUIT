@@ -1,6 +1,6 @@
-﻿namespace ExitSuit{
-  
+﻿using OVRSharp;
 
+namespace ExitSuit{
   class Program{
     static void main(string[] args){
       Skeleton skeleton = new Skeleton();
@@ -21,6 +21,9 @@
       new JointFeedbackImpulse(lowerLegLeft, 0.5f, 0.5f);
       new JointFeedbackImpulse(lowerLegRight, 0.5f, 0.5f);
       
+     Application application = new Application(Application.ApplicationType.Overlay); 
+     var overlay = new ExitUI();
+     overlay.Show();
     }
   }
 }
